@@ -14,4 +14,5 @@ class SURVIVOR_API ASurvivorGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
 	
+	virtual void StartPlay() override;
 };
