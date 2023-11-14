@@ -15,3 +15,6 @@ void ASurvivorGameModeBase::StartPlay()
     GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Yellow, TEXT("Hello World, this is FPSGameModeBase!"));
 }
 
+
+
+
