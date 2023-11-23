@@ -7,7 +7,7 @@
 void ASurvivorGameModeBase::StartPlay()
 {
     Super::StartPlay();
-
+    ChangeMenuWidget(StartingWidgetClass);
     check(GEngine != nullptr);
 
     // Display a debug message for five seconds. 
@@ -16,5 +16,22 @@ void ASurvivorGameModeBase::StartPlay()
 }
 
 
+void ASurvivorGameModeBase::ChangeMenuWidget(TSubclassOf<UUserWidget> NewWidgetClass) 
+{
+    //Check if there a UI On Screen
+    // If there is remove it
+    if (CurrentWidget != nullptr) 
+    {
+        CurrentWidget->RemoveFromViewport();
+        CurrentWidget = nullptr;
+    }
 
+    //Create a new UI
+    //Add to viewport
+    if (NewWidgetClass != nullptr) 
+    {
+        CurrentWidget = CreateWidget<UUserWidget>(GetWorld(), NewWidgetClass);
+        CurrentWidget->AddToViewport();
+    }
+}
 
