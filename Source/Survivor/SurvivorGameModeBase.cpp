@@ -16,7 +16,7 @@ void ASurvivorGameModeBase::StartPlay()
 }
 
 
-void ASurvivorGameModeBase::ChangeMenuWidget(TSubclassOf<UUserWidget> NewWidgetClass) 
+void ASurvivorGameModeBase::ChangeMenuWidget(TSubclassOf<USurvivorUserWidget> NewWidgetClass)
 {
     //Check if there a UI On Screen
     // If there is remove it
@@ -30,7 +30,7 @@ void ASurvivorGameModeBase::ChangeMenuWidget(TSubclassOf<UUserWidget> NewWidgetC
     //Add to viewport
     if (NewWidgetClass != nullptr) 
     {
-        CurrentWidget = CreateWidget<UUserWidget>(GetWorld(), NewWidgetClass);
+        CurrentWidget = CreateWidget<USurvivorUserWidget>(GetWorld(), NewWidgetClass);
         CurrentWidget->AddToViewport();
     }
 }

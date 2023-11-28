@@ -7,6 +7,8 @@
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "SurvivorProjectile.h"
+#include "Kismet/GameplayStatics.h"
+#include "SurvivorGameModeBase.h"
 #include "SurvivorPlayer.generated.h"
 
 UCLASS()
@@ -65,4 +67,6 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
 		FVector MuzzleOffset;
 
+	float Health = 100;
+	const float MaxHealth = 100;
 };

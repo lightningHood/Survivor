@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
 #include "Blueprint/UserWidget.h"
+#include "SurvivorUserWidget.h"
 #include "SurvivorGameModeBase.generated.h"
 
 /**
@@ -19,11 +20,11 @@ public:
 	virtual void StartPlay() override;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "UMG UI")
-		TSubclassOf<UUserWidget> StartingWidgetClass;
+		TSubclassOf<USurvivorUserWidget> StartingWidgetClass;
 
 	UPROPERTY()
-		UUserWidget* CurrentWidget;
+		USurvivorUserWidget* CurrentWidget;
 
 	UFUNCTION(BlueprintCallable, Category = "UMG UI")
-	void ChangeMenuWidget(TSubclassOf<UUserWidget> NewWidgetClass);
+	void ChangeMenuWidget(TSubclassOf<USurvivorUserWidget> NewWidgetClass);
 };

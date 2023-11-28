@@ -108,6 +108,17 @@ void ASurvivorPlayer::StopJump()
 
 void ASurvivorPlayer::Fire()
 {
+	ASurvivorGameModeBase* GameMode = Cast<ASurvivorGameModeBase>(UGameplayStatics::GetGameMode(GetWorld()));
+	if (GameMode) {
+		Health -= 10;
+		float healthPercent = Health / MaxHealth;
+
+		GameMode->CurrentWidget->SetHealthBar(healthPercent);
+	}
+
+	Health -= 10;
+	float healthPercent = Health / MaxHealth;
+
 	// Attempt to fire a projectile.
 	if (ProjectileClass)
 	{
