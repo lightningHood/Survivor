@@ -40,5 +40,10 @@ void ACoin::OnCollect()
 
 void ACoin::DeathTimerComplete()
 {
+	ASurvivorGameModeBase* GameMode = Cast<ASurvivorGameModeBase>(UGameplayStatics::GetGameMode(GetWorld()));
+	if (GameMode) {
+		GameMode->CurrentWidget->SetScore(Points);
+	}
+
 	Destroy();
 }

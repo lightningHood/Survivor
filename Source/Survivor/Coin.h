@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "Collectable.h"
+#include "Kismet/GameplayStatics.h"
+#include "SurvivorGameModeBase.h"
 #include "Coin.generated.h"
 
 /**
@@ -29,7 +31,10 @@ public:
 	virtual void OnCollect() override;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-		float RotationRate = 100;
+	float RotationRate = 100;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	float Points = 1;
 
 	UPROPERTY(VisibleAnyWhere)
 	UStaticMeshComponent* CoinMesh;
